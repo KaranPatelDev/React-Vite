@@ -4,8 +4,8 @@ const App = () => {
   return (
     <div className='parent'>
       <div className="card">
-        <img src="https://w0.peakpx.com/wallpaper/874/7/HD-wallpaper-ultra-instinct-goku-anime-blue-dragon-ball-galaxy-goku-hero-son-goku-ultra-instinct-goku-white.jpg" alt="Son Goku" />
-        <h1>Karan Patel</h1>
+        <img src="https://w0.peakpx.com/wallpaper/434/414/HD-wallpaper-ultra-ego-vegeta-dragon-ball-2023.jpg" alt="Son Goku" />
+        <h1>Vegeta : Ultra Ego</h1>
         <p>“Final Year B.Tech Student at Drs. Kiran and Pallavi Patel Global University | Python & Web Developer | Data Analyst | ML and Full Stack Enthusiast”</p>
         <button
           onClick={() =>
@@ -17,8 +17,18 @@ const App = () => {
           Learn More
         </button>
       </div>
-      <Card />
-      <Card />
+      {/* <Card user = "Karan" age = "20"/> */}
+
+      <Card user = "Omkar" age = {18} imgURL = "https://w0.peakpx.com/wallpaper/434/414/HD-wallpaper-ultra-ego-vegeta-dragon-ball-2023.jpg"/> {/* Passing props to Card component and {} is used to pass integers as props*/}
+
+      <Card user = "Karan" age = {20} imgURL = "https://w0.peakpx.com/wallpaper/434/414/HD-wallpaper-ultra-ego-vegeta-dragon-ball-2023.jpg"/>
+
+      <Card user = "Karan Patel" age ={20} imgURL = "https://w0.peakpx.com/wallpaper/434/414/HD-wallpaper-ultra-ego-vegeta-dragon-ball-2023.jpg" />
+
+      <Card/>
+
+      <Card user = "Omkar" age = {18} imgURL = "https://w0.peakpx.com/wallpaper/434/414/HD-wallpaper-ultra-ego-vegeta-dragon-ball-2023.jpg"/>
+      
     </div>
   )
 }
