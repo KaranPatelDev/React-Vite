@@ -13,6 +13,12 @@ const App = () => {
     setArr([100 , 200 , 300 , 400 , 500]);
   }
 
+  const [number, setNumber] = useState(10);
+  const btnClicked = () => {
+    setNumber(prev => (prev + 1));
+    setNumber(prev => (prev + 1));
+    setNumber(prev => (prev + 1));
+  }
 
   // let a = 20;
   // function changeA(){
@@ -25,6 +31,9 @@ const App = () => {
     <div>
       <h1>Value of num is {num} <br /> Value of username is {userName} <br /> Value of arr is {arr}<br /> Value of users is {users}</h1>
       <button onClick={changeNum}>Click Me</button>
+      <br /><br />
+      <h1>{number}</h1>
+      <button onClick={btnClicked}>Ayy! Click Me</button>
     </div>
   )
 }
