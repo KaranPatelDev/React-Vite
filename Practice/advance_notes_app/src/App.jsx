@@ -37,13 +37,6 @@ function simpleMarkup(text = '') {
   return out
 }
 
-// small excerpt helper for card previews
-const excerpt = (text = '', n = 120) => {
-  const s = String(text || '').replace(/\s+/g, ' ').trim()
-  if (!s) return ''
-  return s.length > n ? s.slice(0, n).trim() + '…' : s
-}
-
 const useLocalStorage = (key, initial) => {
   const [state, setState] = useState(() => {
     try {
@@ -440,12 +433,10 @@ export default function App() {
                   >
                     <div className="flex items-start justify-between gap-2">
                       <div>
-                        <h3 className="text-lg font-bold text-gray-900 break-words break-all">
-                          {note.title ? note.title : <span className="text-gray-600">{excerpt(note.details, 40) || 'Untitled'}</span>}
-                        </h3>
+                        <h3 className="text-lg font-bold text-gray-900 break-words break-all">{note.title || <span className="text-gray-600">Untitled</span>}</h3>
                         <div
                           className="text-sm mt-2 text-gray-800 break-words break-all whitespace-pre-wrap"
-                          dangerouslySetInnerHTML={{ __html: simpleMarkup(excerpt(note.details, 140)) }}
+                          dangerouslySetInnerHTML={{ __html: simpleMarkup(note.details) }}
                         />
                       </div>
 
@@ -511,8 +502,8 @@ export default function App() {
                 <div className={`${theme === 'dark' ? 'bg-slate-800 text-gray-100' : 'bg-white text-gray-900'} rounded-lg p-6 w-full max-w-2xl modal-content`} onClick={(e) => e.stopPropagation()}>
                   <div className="flex items-start justify-between gap-4">
                     <div>
-                      <h2 className={`text-xl font-bold ${theme === 'dark' ? 'text-gray-100' : 'text-gray-900'}`}>{viewing.title || 'Untitled'}</h2>
-                      <small className={`${theme === 'dark' ? 'text-gray-300' : 'text-gray-500'} text-xs`}>{new Date(viewing.createdAt).toLocaleString()}</small>
+                      <h2 className="text-xl font-bold text-gray-900">{viewing.title || 'Untitled'}</h2>
+                      <small className="text-xs text-gray-500">{new Date(viewing.createdAt).toLocaleString()}</small>
                     </div>
 
                     {/* Preview / Raw toggle */}

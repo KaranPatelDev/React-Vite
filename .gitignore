@@ -1,5 +1,4 @@
 # Node modules (root and nested)
-# Node modules (root and nested)
 node_modules/
 **/node_modules/
 
@@ -15,4 +14,3 @@ yarn-error.log*
 # Editor directories and files
 .vscode/
 .DS_Store
-**/node_modules/
